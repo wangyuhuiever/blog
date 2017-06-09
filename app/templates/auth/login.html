@@ -12,5 +12,8 @@
     <div>
         还没有账户？<a href="{{ url_for('auth.register') }}">注册账户</a>
     </div>
+    <div>
+        忘记密码？<a href="{{ url_for('auth.password_reset_request') }}">重置密码</a>
+    </div>
 </div>
 {% endblock %}
