@@ -38,11 +38,11 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">修改密码</a> </li>
                         <li><a href="#">修改邮箱</a> </li>
-                        <li><a href="#">退出账户</a> </li>
+                        <li><a href="{{ url_for('auth.logout') }}">退出账户</a> </li>
                     </ul>
                 </li>
                 {% else %}
-                <li><a href="#">登录</a> </li>
+                <li><a href="{{ url_for('auth.login') }}">登录</a> </li>
                 {% endif %}
             </ul>
         </div>

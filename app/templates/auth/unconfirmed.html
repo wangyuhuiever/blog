@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}未确认 - 我的博客{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>未完成确认</h1>
+</div>
+<p>
+    登录之后要完成确认才能继续操作。
+</p>
+<p>
+    未收到邮件？<a href="{{ url_for('auth.resend_confirmation') }}">点击这里</a>，重新发送。
+</p>
+{% endblock %}
