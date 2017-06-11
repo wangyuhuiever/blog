@@ -13,7 +13,7 @@ class Config:
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     BLOG_MAIL_SUBJECT_PREFIX = '[BLOG]'
     BLOG_MAIL_SENDER = ('BLOG ADMIN', os.environ.get('MAIL_USERNAME'))
-
+    BLOG_POSTS_PER_PAGE = 20
 
     @staticmethod
     def init_app(app):
