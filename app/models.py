@@ -124,12 +124,12 @@ class User(UserMixin, db.Model):
 
     def gravatar(self, size=100, default='identicon', rating='g'):
         if request.is_secure:
-            url = 'http://secure.gravatar.com/avatar'
+            url = 'https://secure.gravatar.com/avatar'
         else:
             url = 'http://www.gravatar.com/avatar'
         hash = self.avatar_hash or hashlib.md5(
             self.email.encode('utf-8')).hexdigest()
-        return '{url}/{hash}?s={size}&d={default}&={rating}'.format(
+        return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
             url=url, hash=hash, size=size, default=default, rating=rating)
 
     def can(self, permissions):
@@ -205,11 +205,11 @@ class User(UserMixin, db.Model):
 
     def to_json(self):
         json_user = {
-            'url': url_for('api.get_post', id=self.id, _external=True),
+            'url': url_for('api.get_user', id=self.id, _external=True),
             'username': self.username,
             'member_since': self.member_since,
             'last_seen': self.last_seen,
-            'posts': url_for('api.get_user_posts', id-self.id, _external=True),
+            'posts': url_for('api.get_user_posts', id=self.id, _external=True),
             'followed_posts': url_for('api.get_user_followed_posts',
                                       id=self.id, _external=True),
             'post_count': self.posts.count()

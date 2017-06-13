@@ -18,7 +18,7 @@ def get_comments():
     if pagination.has_next:
         next = url_for('api.get_commets', page=page+1, _external=True)
     return jsonify({
-        'comment':[comment.to_json() for comment in comments],
+        'comments':[comment.to_json() for comment in comments],
         'prev': prev,
         'next': next,
         'count': pagination.total
@@ -52,7 +52,7 @@ def get_post_comments(id):
 
 @api.route('/posts/<int:id>/comments/', methods=['POST'])
 @permission_required(Permission.COMMENT)
-def new_comment(id):
+def new_post_comment(id):
     post = Post.query.get_or_404(id)
     comment = Comment.from_json(request.json)
     comment.author = g.current_user
