@@ -37,4 +37,4 @@ webencodings==0.5.1
 Werkzeug==0.12.2
 WTForms==2.1
 gunicorn==19.7.1
-psyconpg2==2.7.2
+psyconpg2==2.7.1
