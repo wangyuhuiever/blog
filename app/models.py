@@ -1,3 +1,4 @@
+#! -*- encoding:utf-8 -*-
 from . import db, login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import current_app, request, url_for

@@ -1,3 +1,4 @@
+#! -*- encoding:utf-8 -*-
 from . import main
 from flask import render_template, abort, redirect,\
     url_for, flash, request, current_app, make_response
