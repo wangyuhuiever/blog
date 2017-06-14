@@ -7,7 +7,6 @@ if os.environ.get('BLOG_COVERAGE'):
     COV = coverage.coverage(branch=True, include='app/*')
     COV.start()
 
-
 from imp import reload
 from app import create_app, db
 from flask_script import Manager, Shell
