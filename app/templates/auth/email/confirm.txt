@@ -1,0 +1,9 @@
+亲爱的{{ user.username }}。
+欢迎注册BLOG。
+复制下面的网址到浏览器完成注册。
+{{ url_for('auth.confirm', token=token, _external=True) }}
+如果你没有注册BLOG的话，请忽略这封邮件。
+如果看中我的作品的话，还请回复我。
+邮箱：wangyuhuiever@163.com
+联系电话：15538806897
+谢谢。
